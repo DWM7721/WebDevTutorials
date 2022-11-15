@@ -39,3 +39,16 @@ button {
     translate: -15px -15px;
     rotate: -0.75rad;
 }
+
+/* BUTTON TWO */
+.button-two {
+    --button-color: #232;
+}
+
+.button-two .line {
+    transition: stroke-dashoffset 1s;
+}
+
+.button-two:hover .line {
+    stroke-dashoffset: 79.9;
+}
