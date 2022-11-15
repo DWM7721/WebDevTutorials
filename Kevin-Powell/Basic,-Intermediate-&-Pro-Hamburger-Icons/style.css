@@ -2,6 +2,7 @@ button {
     background: transparent;
     border: 2px solid var(--button-color, #000000);
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .button-one {
@@ -46,9 +47,58 @@ button {
 }
 
 .button-two .line {
-    transition: stroke-dashoffset 1s;
+    animation: to-open-menu 1s forwards;
+}
+.button-two .line.middle {
+    animation: middle-open 1s forwards;
 }
 
 .button-two:hover .line {
-    stroke-dashoffset: 79.9;
+    animation: to-close-menu 1s forwards;
 }
+.button-two:hover .line.middle {
+    animation: middle-close 1s forwards;
+}
+
+.button-two .line.top {
+    --rotation: 45deg;
+    --translation-val: 36.25px -5px;
+    transform-origin: top left;
+
+}
+.button-two .line.bottom {
+    --rotation: -45deg;
+    --translation-val: 36.25px 7.5px;
+    transform-origin: bottom left;
+
+}
+
+@keyframes middle-close {
+    0% { stroke-dashoffset: 0; opacity: 1;}
+    15% {opacity: 1;}
+    20% {opacity: 0;}
+    40% { stroke-dashoffset: 79.9; opacity: 0;}
+    60% { stroke-dashoffset: 79.9;  opacity: 0;}
+    100% { stroke-dashoffset: 0;  opacity: 0;}
+}
+@keyframes middle-open {
+    100% { stroke-dashoffset: 0; opacity: 1;}
+    60% { stroke-dashoffset: 79.9; opacity: 0;}
+    40% { stroke-dashoffset: 79.9; opacity: 0;}
+    0% { stroke-dashoffset: 0;  opacity: 0;}
+}
+
+@keyframes to-close-menu {
+    0% { stroke-dashoffset: 0; }
+    40% { stroke-dashoffset: 79.9; }
+    60% { stroke-dashoffset: 79.9; transform: rotateZ(var(--rotation)); translate: var(--translation-val);}
+    100% { stroke-dashoffset: 0;  transform: rotateZ(var(--rotation)); translate: var(--translation-val);}
+}
+@keyframes to-open-menu {
+    100% { stroke-dashoffset: 0; }
+    60% { stroke-dashoffset: 79.9; }
+    40% { stroke-dashoffset: 79.9; transform: rotateZ(var(--rotation)); translate: var(--translation-val);}
+    0% { stroke-dashoffset: 0;  transform: rotateZ(var(--rotation)); translate: var(--translation-val);}
+}
+
+/* BUTTON THREE */

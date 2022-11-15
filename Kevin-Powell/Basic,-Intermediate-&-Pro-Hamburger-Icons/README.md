@@ -13,3 +13,6 @@ https://youtu.be/R00QiudbD4Y
 #### Rect tag
 - The y value of the rect tag is related to the top left corner of the rectangle; a y value of 100 in a viewbox of 0 0 100 100 will cause the rectangle to go offscreen. therefore the usable space is actually 0-90 (100-height of rect) and so the middle is 45
 - rx for border radius, make it half of the x value to get a perfect curve
+
+### General
+- keyframes and animations
