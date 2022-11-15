@@ -9,14 +9,33 @@ button {
 }
 
 .button-one .line {
-    transition: 1s;
+    transition:
+        translate 300ms ease-in,
+        transform 300ms ease-in,
+        rotate 300ms ease-in,
+        opacity 500ms 150ms;
     transform-origin: center;
 }
 
-.button-one:hover .top {
-    y: 45;
+.button-one:hover .line {
+    transition:
+        translate 300ms ease-in,
+        transform 300ms ease-in,
+        rotate 300ms ease-in,
+        opacity 300ms;
 }
 
-.button-one[aria-expanded="true"] .top {
+/* not using y property cause it doesn't work properly in firefox */
+.button-one:hover .top {
+    translate: -15px 15px;
+    rotate: 0.75rad;
+}
 
+.button-one:hover .middle {
+    opacity: 0;
+}
+
+.button-one:hover .bottom {
+    translate: -15px -15px;
+    rotate: -0.75rad;
 }
