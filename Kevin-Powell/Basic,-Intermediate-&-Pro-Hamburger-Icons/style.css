@@ -102,3 +102,25 @@ button {
 }
 
 /* BUTTON THREE */
+.button-three {
+    --button-color: purple;
+    overflow: hidden;
+}
+
+.button-three .hamburger {
+    transition: translate 1s, rotate 1s;
+}
+.button-three[aria-expanded="true"] .hamburger {
+    /* border: solid 1px red; */
+    translate: 10px -10px;
+    rotate: 0.125turn;
+}
+
+.button-three .line {
+    transition: 1s;
+    stroke-dasharray: 60 30 60 300;
+}
+.button-three[aria-expanded="true"] .line {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+}
