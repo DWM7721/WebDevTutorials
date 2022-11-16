@@ -46,17 +46,17 @@ button {
     --button-color: #232;
 }
 
-.button-two .line {
+.button-two[data-state="closed"] .line {
     animation: to-open-menu 1s forwards;
 }
-.button-two .line.middle {
+.button-two[data-state="closed"] .line.middle {
     animation: middle-open 1s forwards;
 }
 
-.button-two:hover .line {
+.button-two[data-state="opened"] .line {
     animation: to-close-menu 1s forwards;
 }
-.button-two:hover .line.middle {
+.button-two[data-state="opened"] .line.middle {
     animation: middle-close 1s forwards;
 }
 
